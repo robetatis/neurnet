@@ -61,13 +61,9 @@ def main():
 
         test_random_predictions(X_test=X_test, y_test=y_test_raw, n=10, model=nn)
 
-# compute and print out quality indicators
-#confusion_matrix, precision, recall, corrects, wrongs = nn1.quality(Xtest, ytest)
+        confusion_matrix, precision, recall, corrects, wrongs = nn.quality(X_test, y_test)
 #pd.DataFrame({'label': np.arange(0, 10), 'precision': precision, 'recall': recall})
 
-# save training and testing quality indicators
-#post.computesavequality(X=Xtrain, y=ytrain, model=nn1, outfileprefix='train_')
-#post.computesavequality(X=Xtest, y=ytest, model=nn1, outfileprefix='test_')
 
 if __name__ == '__main__':
     main()
