@@ -17,9 +17,9 @@ def test_random_predictions(X_test, y_test, n, model):
         y_pred_max_activation.append(np.max(y_pred_activations))
     
     print(f'\n==== predictions for {n} random samples ===')
-    print('\ny_test\ty_pred\tactivation')
+    print('y_test\ty_pred\tactivation')
     for i, idx in enumerate(index):
-        print(f'{y_test[idx]}\t{y_pred_label[i]}\t{y_pred_max_activation[i]}')
+        print(f'{y_test[idx]}\t{y_pred_label[i]}\t{y_pred_max_activation[i]:.2f}')
 
 def computesavequality(X, y, model, outfileprefix):
     cm, p, r, corrects, wrongs = model.quality(X, y)

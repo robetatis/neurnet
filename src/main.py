@@ -61,9 +61,13 @@ def main():
 
         test_random_predictions(X_test=X_test, y_test=y_test_raw, n=10, model=nn)
 
-        confusion_matrix, precision, recall, corrects, wrongs = nn.quality(X_test, y_test)
-#pd.DataFrame({'label': np.arange(0, 10), 'precision': precision, 'recall': recall})
-
+        confusion_matrix, precision, recall, corrects, wrongs = nn.quality(X_test, y_test_raw)
+        print('\n=== confusion matrix ===')
+        print(confusion_matrix)
+        print('\n=== model quality stats ===')
+        print('label\tprecision\trecall')
+        for i in range(0, 10):
+            print(f'{i}\t{precision[i]:.2}\t\t{recall[i]:.2f}')
 
 if __name__ == '__main__':
     main()
